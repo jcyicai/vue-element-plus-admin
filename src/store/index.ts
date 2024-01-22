@@ -1,27 +1,8 @@
-import { createStore } from 'vuex'
+import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
-const defaultState = {
-  count: 0
-}
+// pinia persist
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
 
-// Create a new store instance.
-export default createStore({
-  state() {
-    return defaultState
-  },
-  mutations: {
-    increment(state: typeof defaultState) {
-      state.count++
-    }
-  },
-  actions: {
-    increment(context: any) {
-      context.commit('increment')
-    }
-  },
-  getters: {
-    double(state: typeof defaultState) {
-      return 2 * state.count
-    }
-  }
-})
+export default pinia
