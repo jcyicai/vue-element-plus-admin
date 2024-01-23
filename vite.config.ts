@@ -3,6 +3,14 @@ import { resolve } from 'path'
 import { wrapperEnv } from './build/getEnv'
 import { createProxy } from './build/proxy'
 import { createVitePlugins } from './build/plugins'
+import pkg from './package.json'
+import dayjs from 'dayjs'
+
+const { dependencies, devDependencies, name, version } = pkg
+const __APP_INFO__ = {
+  pkg: { dependencies, devDependencies, name, version },
+  lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss')
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -11,13 +19,16 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const viteEnv = wrapperEnv(env) // 获取处理后的环境变量
 
   return {
+    base: viteEnv.VITE_PUBLIC_PATH, // 公共基础路径
+    root,
     resolve: {
       alias: {
         '@': resolve(__dirname, './src')
       }
     },
-    base: viteEnv.VITE_PUBLIC_PATH, // 公共基础路径
-    root,
+    define: {
+      __APP_INFO__: JSON.stringify(__APP_INFO__)
+    },
     server: {
       host: '0.0.0.0',
       port: viteEnv.VITE_PORT, // 端口号
