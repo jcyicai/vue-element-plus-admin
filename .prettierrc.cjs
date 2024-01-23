@@ -1,36 +1,39 @@
 module.exports = {
-  // (x)=>{},单个参数箭头函数是否显示小括号。(always:始终显示;avoid:省略括号。默认:always)
-  arrowParens: 'avoid',
-  // 开始标签的右尖括号是否跟随在最后一行属性末尾，默认false
-  bracketSameLine: false,
-  // 对象字面量的括号之间打印空格 (true - Example: { foo: bar } ; false - Example: {foo:bar})
-  bracketSpacing: true,
-  // 是否格式化一些文件中被嵌入的代码片段的风格(auto|off;默认auto)
-  embeddedLanguageFormatting: 'auto',
-  // 指定 HTML 文件的空格敏感度 (css|strict|ignore;默认css)
-  htmlWhitespaceSensitivity: 'css',
-  // 当文件已经被 Prettier 格式化之后，是否会在文件顶部插入一个特殊的 @format 标记，默认false
-  insertPragma: false,
-  // 在 JSX 中使用单引号替代双引号，默认false
-  jsxSingleQuote: false,
-  // 每行最多字符数量，超出换行(默认80)
+  // 指定最大换行长度
   printWidth: 120,
-  // 超出打印宽度 (always | never | preserve )
-  proseWrap: 'preserve',
-  // 对象属性是否使用引号(as-needed | consistent | preserve;默认as-needed:对象的属性需要加引号才添加;)
-  quoteProps: 'as-needed',
-  // 是否只格式化在文件顶部包含特定注释(@prettier| @format)的文件，默认false
-  requirePragma: false,
-  // 结尾添加分号
-  semi: false,
-  // 使用单引号 (true:单引号;false:双引号)
-  singleQuote: true,
-  // 缩进空格数，默认2个空格
+  // 缩进制表符宽度 | 空格数
   tabWidth: 2,
-  // 元素末尾是否加逗号，默认es5: ES5中的 objects, arrays 等会添加逗号，TypeScript 中的 type 后不加逗号
-  trailingComma: 'none',
-  // 指定缩进方式，空格或tab，默认false，即使用空格
+  // 使用制表符而不是空格缩进行 (true：制表符，false：空格)
   useTabs: false,
-  // vue 文件中是否缩进 <style> 和 <script> 标签，默认 false
-  vueIndentScriptAndStyle: false
+  // 结尾不用分号 (true：有，false：没有)
+  semi: false,
+  // 使用单引号 (true：单引号，false：双引号)
+  singleQuote: true,
+  // 在对象字面量中决定是否将属性名用引号括起来 可选值 "<as-needed|consistent|preserve>"
+  quoteProps: 'as-needed',
+  // 在JSX中使用单引号而不是双引号 (true：单引号，false：双引号)
+  jsxSingleQuote: false,
+  // 多行时尽可能打印尾随逗号 可选值"<none|es5|all>"
+  trailingComma: 'none',
+  // 在对象，数组括号与文字之间加空格 "{ foo: bar }" (true：有，false：没有)
+  bracketSpacing: true,
+  // 将 > 多行元素放在最后一行的末尾，而不是单独放在下一行 (true：放末尾，false：单独一行)
+  bracketSameLine: false,
+  // (x) => {} 箭头函数参数只有一个时是否要有小括号 (avoid：省略括号，always：不省略括号)
+  arrowParens: 'avoid',
+  // 指定要使用的解析器，不需要写文件开头的 @prettier
+  requirePragma: false,
+  // 可以在文件顶部插入一个特殊标记，指定该文件已使用 Prettier 格式化
+  insertPragma: false,
+  // 用于控制文本是否应该被换行以及如何进行换行
+  proseWrap: 'preserve',
+  // 在html中空格是否是敏感的 "css" - 遵守 CSS 显示属性的默认值， "strict" - 空格被认为是敏感的 ，"ignore" - 空格被认为是不敏感的
+  htmlWhitespaceSensitivity: 'css',
+  // 控制在 Vue 单文件组件中 <script> 和 <style> 标签内的代码缩进方式
+  vueIndentScriptAndStyle: false,
+  // 换行符使用 lf 结尾是 可选值 "<auto|lf|crlf|cr>"
+  endOfLine: 'auto',
+  // 这两个选项可用于格式化以给定字符偏移量（分别包括和不包括）开始和结束的代码 (rangeStart：开始，rangeEnd：结束)
+  rangeStart: 0,
+  rangeEnd: Infinity
 }

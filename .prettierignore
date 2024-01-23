@@ -7,3 +7,5 @@ public
 .idea
 *.sh
 *.md
+**/*.svg
+**/*.sh
