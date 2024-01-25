@@ -16,7 +16,7 @@
     "useDefineForClassFields": true, // 指定是否在编译时使用 ECMAScript 中的类字段定义语法
     "module": "ESNext", // 指定生成的模块代码
     "moduleResolution": "Node", // 指定 ts 在解析模块依赖关系时采用的模块解析策略
-    "types": ["vite/client", "element-plus/global"], // 包含的类型声明
+    "types": ["vite/client", "element-plus/global", "vite-plugin-svg-icons/client"], // 包含的类型声明
 
     /* Strict Type-Checking Options */
     "strict": true,
