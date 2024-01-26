@@ -1,10 +1,14 @@
 import { CustomAxiosRequestConfig } from '../index'
 import qs from 'qs'
 
+// axios cancel request doc
+// https://axios-http.com/zh/docs/cancellation
+
 // 声明一个 Map 用于存储每个请求的标识 和 取消函数
 let pendingMap = new Map<string, AbortController>()
 
 // 序列化参数
+// qs.stringify 例：{ id: 001, name: 'jc'} --> 'id=001&name=jc'
 export const getPendingUrl = (config: CustomAxiosRequestConfig) =>
   [config.method, config.url, qs.stringify(config.data), qs.stringify(config.params)].join('&')
 
