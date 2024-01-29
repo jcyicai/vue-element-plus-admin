@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
-import { AuthState } from '@/stores/interface'
+import { AuthState } from '@/store/interface'
 import { getAuthButtonListApi, getAuthMenuListApi } from '@/api/modules/login'
 import { getFlatMenuList, getShowMenuList, getAllBreadcrumbList } from '@/utils'
 
 export const useAuthStore = defineStore({
-  id: 'geeker-auth',
+  id: 'vepa-auth',
   state: (): AuthState => ({
     // 按钮权限列表
     authButtonList: {},
