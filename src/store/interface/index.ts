@@ -1,5 +1,5 @@
 /** 布局模式 */
-export type LayoutType = 'vertical' | 'classic' | 'transverse' | 'columns'
+export type LayoutType = 'vertical' //'vertical' | 'classic' | 'transverse' | 'columns'
 /** 组件尺寸 */
 export type ElementSizeType = 'large' | 'default' | 'small'
 /** 语言 */

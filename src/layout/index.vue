@@ -1,7 +1,26 @@
+<!-- 💥 这里是一次性加载 LayoutComponents -->
 <template>
-  <div></div>
+  <component :is="LayoutComponents[layout]" />
+  <!-- <ThemeDrawer /> -->
 </template>
 
-<script lang="ts" setup></script>
+<script setup lang="ts" name="layout">
+import { computed, type Component } from 'vue'
+import { LayoutType } from '@/store/interface'
+import { useGlobalStore } from '@/store/modules/global'
+//import ThemeDrawer from './components/ThemeDrawer/index.vue'
+import LayoutVertical from './LayoutVertical/index.vue'
 
-<style lang="scss" scoped></style>
+const LayoutComponents: Record<LayoutType, Component> = {
+  vertical: LayoutVertical
+}
+
+const globalStore = useGlobalStore()
+const layout = computed(() => globalStore.layout)
+</script>
+
+<style scoped lang="scss">
+.layout {
+  min-width: 600px;
+}
+</style>
