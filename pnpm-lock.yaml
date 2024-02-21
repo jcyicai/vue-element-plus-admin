@@ -38,6 +38,12 @@ dependencies:
   qs:
     specifier: ^6.11.2
     version: 6.11.2
+  screenfull:
+    specifier: ^6.0.2
+    version: 6.0.2
+  sortablejs:
+    specifier: ^1.15.2
+    version: 1.15.2
   vue:
     specifier: ^3.4.14
     version: 3.4.14(typescript@5.3.3)
@@ -4334,6 +4340,11 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
+  /screenfull@6.0.2:
+    resolution: {integrity: sha512-AQdy8s4WhNvUZ6P8F6PB21tSPIYKniic+Ogx0AacBMjKP1GUHN2E9URxQHtCusiwxudnCKkdy4GrHXPPJSkCCw==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+    dev: false
+
   /semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
@@ -4454,6 +4465,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /sortablejs@1.15.2:
+    resolution: {integrity: sha512-FJF5jgdfvoKn1MAKSdGs33bIqLi3LmsgVTliuX6iITj834F+JRQZN90Z93yql8h0K2t0RwDPBmxwlbZfDcxNZA==}
+    dev: false
 
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}

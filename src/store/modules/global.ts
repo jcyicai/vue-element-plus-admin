@@ -16,11 +16,11 @@ export const useGlobalStore = defineStore({
     // 主题颜色
     themeColor: DEFAULT_THEME_COLOR,
     // 当前页面是否全屏
-    fullScreen: false,
+    maximize: false,
     // 暗黑模式
     darkMode: false,
     // 折叠菜单
-    collapse: false,
+    isCollapse: false,
     // 菜单手风琴
     accordion: true,
     // 面包屑导航

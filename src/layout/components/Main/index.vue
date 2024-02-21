@@ -19,11 +19,11 @@
 import { ref, onBeforeUnmount, provide, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useDebounceFn } from '@vueuse/core'
-import { useGlobalStore } from '@/stores/modules/global'
-import { useKeepAliveStore } from '@/stores/modules/keepAlive'
-import Maximize from './components/Maximize.vue'
-import Tabs from '@/layouts/components/Tabs/index.vue'
-import Footer from '@/layouts/components/Footer/index.vue'
+import { useGlobalStore } from '@/store/modules/global'
+import { useKeepAliveStore } from '@/store/modules/keepAlive'
+import Maximize from './components/Maximize.vue' // 退出全屏
+import Tabs from '@/layout/components/Tabs/index.vue'
+import Footer from '@/layout/components/Footer/index.vue'
 
 const globalStore = useGlobalStore()
 const { maximize, isCollapse, layout, tabs, footer } = storeToRefs(globalStore)
@@ -41,8 +41,11 @@ watch(
   () => maximize.value,
   () => {
     const app = document.getElementById('app') as HTMLElement
-    if (maximize.value) app.classList.add('main-maximize')
-    else app.classList.remove('main-maximize')
+    if (maximize.value) {
+      app.classList.add('main-maximize')
+    } else {
+      app.classList.remove('main-maximize')
+    }
   },
   { immediate: true }
 )
@@ -61,9 +64,16 @@ watch(
 const screenWidth = ref(0)
 const listeningWindow = useDebounceFn(() => {
   screenWidth.value = document.body.clientWidth
-  if (!isCollapse.value && screenWidth.value < 1200) globalStore.setGlobalState('isCollapse', true)
-  if (isCollapse.value && screenWidth.value > 1200) globalStore.setGlobalState('isCollapse', false)
+
+  if (!isCollapse.value && screenWidth.value < 1200) {
+    globalStore.setGlobalState('isCollapse', true)
+  }
+
+  if (isCollapse.value && screenWidth.value > 1200) {
+    globalStore.setGlobalState('isCollapse', false)
+  }
 }, 100)
+
 window.addEventListener('resize', listeningWindow, false)
 onBeforeUnmount(() => {
   window.removeEventListener('resize', listeningWindow)
@@ -71,5 +81,14 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped lang="scss">
-@import './index.scss';
+.el-main {
+  box-sizing: border-box;
+  padding: 10px 12px;
+  overflow-x: hidden;
+  background-color: var(--el-bg-color-page);
+}
+.el-footer {
+  height: auto;
+  padding: 0;
+}
 </style>

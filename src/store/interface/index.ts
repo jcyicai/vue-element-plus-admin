@@ -16,11 +16,11 @@ export interface GlobalState {
   // 主题颜色
   themeColor: string
   // 当前页面是否全屏
-  fullScreen: boolean
+  maximize: boolean
   // 暗黑模式
   darkMode: boolean
   // 折叠菜单
-  collapse: boolean
+  isCollapse: boolean
   // 菜单手风琴
   accordion: boolean
   // 面包屑导航

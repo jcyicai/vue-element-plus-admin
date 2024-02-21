@@ -6,13 +6,13 @@
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item @click="openDialog('infoRef')">
-          <el-icon><User /></el-icon>{{ $t('header.personalData') }}
+          <el-icon><User /></el-icon>个人信息
         </el-dropdown-item>
         <el-dropdown-item @click="openDialog('passwordRef')">
-          <el-icon><Edit /></el-icon>{{ $t('header.changePassword') }}
+          <el-icon><Edit /></el-icon>修改密码
         </el-dropdown-item>
         <el-dropdown-item divided @click="logout">
-          <el-icon><SwitchButton /></el-icon>{{ $t('header.logout') }}
+          <el-icon><SwitchButton /></el-icon>退出登录
         </el-dropdown-item>
       </el-dropdown-menu>
     </template>
@@ -28,7 +28,7 @@ import { ref } from 'vue'
 import { LOGIN_URL } from '@/config'
 import { useRouter } from 'vue-router'
 import { logoutApi } from '@/api/modules/login'
-import { useUserStore } from '@/stores/modules/user'
+import { useUserStore } from '@/store/modules/user'
 import { ElMessageBox, ElMessage } from 'element-plus'
 import InfoDialog from './InfoDialog.vue'
 import PasswordDialog from './PasswordDialog.vue'
@@ -59,8 +59,14 @@ const logout = () => {
 const infoRef = ref<InstanceType<typeof InfoDialog> | null>(null)
 const passwordRef = ref<InstanceType<typeof PasswordDialog> | null>(null)
 const openDialog = (ref: string) => {
-  if (ref == 'infoRef') infoRef.value?.openDialog()
-  if (ref == 'passwordRef') passwordRef.value?.openDialog()
+  // 个人信息弹窗
+  if (ref === 'infoRef') {
+    infoRef.value?.openDialog()
+  }
+  // 修改密码弹窗
+  if (ref === 'passwordRef') {
+    passwordRef.value?.openDialog()
+  }
 }
 </script>
 

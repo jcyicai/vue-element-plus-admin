@@ -6,25 +6,25 @@
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item @click="refresh">
-          <el-icon><Refresh /></el-icon>{{ $t('tabs.refresh') }}
+          <el-icon><Refresh /></el-icon>刷新
         </el-dropdown-item>
         <el-dropdown-item @click="maximize">
-          <el-icon><FullScreen /></el-icon>{{ $t('tabs.maximize') }}
+          <el-icon><FullScreen /></el-icon>最大化
         </el-dropdown-item>
         <el-dropdown-item divided @click="closeCurrentTab">
-          <el-icon><Remove /></el-icon>{{ $t('tabs.closeCurrent') }}
+          <el-icon><Remove /></el-icon>关闭当前
         </el-dropdown-item>
         <el-dropdown-item @click="tabStore.closeTabsOnSide(route.fullPath, 'left')">
-          <el-icon><DArrowLeft /></el-icon>{{ $t('tabs.closeLeft') }}
+          <el-icon><DArrowLeft /></el-icon>关闭左侧
         </el-dropdown-item>
         <el-dropdown-item @click="tabStore.closeTabsOnSide(route.fullPath, 'right')">
-          <el-icon><DArrowRight /></el-icon>{{ $t('tabs.closeRight') }}
+          <el-icon><DArrowRight /></el-icon>关闭右侧
         </el-dropdown-item>
         <el-dropdown-item divided @click="tabStore.closeMultipleTab(route.fullPath)">
-          <el-icon><CircleClose /></el-icon>{{ $t('tabs.closeOther') }}
+          <el-icon><CircleClose /></el-icon>关闭其他
         </el-dropdown-item>
         <el-dropdown-item @click="closeAllTab">
-          <el-icon><FolderDelete /></el-icon>{{ $t('tabs.closeAll') }}
+          <el-icon><FolderDelete /></el-icon>关闭所有
         </el-dropdown-item>
       </el-dropdown-menu>
     </template>
@@ -34,9 +34,9 @@
 <script setup lang="ts">
 import { inject, nextTick } from 'vue'
 import { HOME_URL } from '@/config'
-import { useTabsStore } from '@/stores/modules/tabs'
-import { useGlobalStore } from '@/stores/modules/global'
-import { useKeepAliveStore } from '@/stores/modules/keepAlive'
+import { useTabsStore } from '@/store/modules/tabs'
+import { useGlobalStore } from '@/store/modules/global'
+import { useKeepAliveStore } from '@/store/modules/keepAlive'
 import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()

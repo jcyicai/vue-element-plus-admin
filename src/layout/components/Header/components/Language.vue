@@ -19,8 +19,8 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
-import { useGlobalStore } from '@/stores/modules/global'
-import { LanguageType } from '@/stores/interface'
+import { useGlobalStore } from '@/store/modules/global'
+import { LanguageType } from '@/store/interface'
 
 const i18n = useI18n()
 const globalStore = useGlobalStore()

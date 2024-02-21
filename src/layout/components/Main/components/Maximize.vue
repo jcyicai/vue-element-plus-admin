@@ -5,9 +5,10 @@
 </template>
 
 <script setup lang="ts">
-import { useGlobalStore } from '@/stores/modules/global'
+import { useGlobalStore } from '@/store/modules/global'
 
 const globalStore = useGlobalStore()
+// 退出全屏
 const exitMaximize = () => {
   globalStore.setGlobalState('maximize', false)
 }

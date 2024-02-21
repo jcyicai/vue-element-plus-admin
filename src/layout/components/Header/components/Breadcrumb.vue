@@ -24,8 +24,8 @@ import { computed } from 'vue'
 import { HOME_URL } from '@/config'
 import { useRoute, useRouter } from 'vue-router'
 import { ArrowRight } from '@element-plus/icons-vue'
-import { useAuthStore } from '@/stores/modules/auth'
-import { useGlobalStore } from '@/stores/modules/global'
+import { useAuthStore } from '@/store/modules/auth'
+import { useGlobalStore } from '@/store/modules/global'
 
 const route = useRoute()
 const router = useRouter()
@@ -33,6 +33,7 @@ const authStore = useAuthStore()
 const globalStore = useGlobalStore()
 
 const breadcrumbList = computed(() => {
+  // 值为 undefined 或者 null 时 返回 []
   let breadcrumbData = authStore.breadcrumbListGet[route.matched[route.matched.length - 1].path] ?? []
   // 🙅‍♀️不需要首页面包屑可删除以下判断
   if (breadcrumbData[0].path !== HOME_URL) {
@@ -43,7 +44,9 @@ const breadcrumbList = computed(() => {
 
 // Click Breadcrumb
 const onBreadcrumbClick = (item: Menu.MenuOptions, index: number) => {
-  if (index !== breadcrumbList.value.length - 1) router.push(item.path)
+  if (index !== breadcrumbList.value.length - 1) {
+    router.push(item.path)
+  }
 }
 </script>
 

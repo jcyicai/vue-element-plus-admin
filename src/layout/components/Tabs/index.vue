@@ -26,9 +26,9 @@
 import Sortable from 'sortablejs'
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useGlobalStore } from '@/stores/modules/global'
-import { useTabsStore } from '@/stores/modules/tabs'
-import { useAuthStore } from '@/stores/modules/auth'
+import { useGlobalStore } from '@/store/modules/global'
+import { useTabsStore } from '@/store/modules/tabs'
+import { useAuthStore } from '@/store/modules/auth'
 import { TabsPaneContext, TabPaneName } from 'element-plus'
 import MoreButton from './components/MoreButton.vue'
 

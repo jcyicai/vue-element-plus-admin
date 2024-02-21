@@ -4,6 +4,8 @@ import App from './App.vue'
 import 'normalize.css/normalize.css'
 // base css
 import '@/styles/index.scss'
+// CSS common style sheet
+import '@/styles/common.scss'
 // element style
 import 'element-plus/dist/index.css'
 // custom element css
