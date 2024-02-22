@@ -1,7 +1,7 @@
 <template>
   <div class="footer flx-center">
     <a href="https://github.com/jcyicai/vue-element-plus-admin" target="_blank">
-      2024 © Vue-Element-Plus-Admin By Jason Chen Technology.
+      2024 © Vepa-Admin By Jason Chen Technology.
     </a>
   </div>
 </template>

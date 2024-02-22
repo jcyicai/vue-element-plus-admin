@@ -1,7 +1,7 @@
 /** 布局模式 */
-export type LayoutType = 'vertical' //'vertical' | 'classic' | 'transverse' | 'columns'
+export type LayoutType = 'vertical' | 'transverse' //'vertical' | 'classic' | 'transverse' | 'columns'
 /** 组件尺寸 */
-export type ElementSizeType = 'large' | 'default' | 'small'
+export type AssemblySizeType = 'large' | 'default' | 'small'
 /** 语言 */
 export type LanguageType = 'zh' | 'en' | null
 
@@ -10,11 +10,21 @@ export interface GlobalState {
   // 布局模式
   layout: LayoutType
   // element 组件大小
-  elementSize: ElementSizeType
+  assemblySize: AssemblySizeType
   // 当前系统语言
   language: LanguageType
   // 主题颜色
-  themeColor: string
+  primary: string
+  // 深色模式
+  isDark: boolean
+  // 灰色模式
+  isGrey: boolean
+  // 色弱模式
+  isWeak: boolean
+  // 侧边栏反转
+  asideInverted: boolean
+  // 头部反转
+  headerInverted: boolean
   // 当前页面是否全屏
   maximize: boolean
   // 暗黑模式
