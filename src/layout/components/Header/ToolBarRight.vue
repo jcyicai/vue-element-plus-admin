@@ -33,7 +33,6 @@ const username = computed(() => userStore.userInfo.name)
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 25px;
   .header-icon {
     display: flex;
     align-items: center;

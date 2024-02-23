@@ -1,6 +1,6 @@
 <template>
   <div class="maximize" @click="exitMaximize">
-    <i :class="'iconfont icon-tuichu'"></i>
+    <i :class="'iconfont icon-exit'"></i>
   </div>
 </template>
 
@@ -33,7 +33,7 @@ const exitMaximize = () => {
     position: relative;
     top: 46%;
     left: 19%;
-    font-size: 14px;
+    font-size: 16px;
     color: #ffffff;
   }
 }
