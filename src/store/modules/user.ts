@@ -2,8 +2,7 @@ import { defineStore } from 'pinia'
 import { UserState } from '@/store/interface'
 import piniaPersistConfig from '@/store/helper/persist'
 
-export const useUserStore = defineStore({
-  id: 'vepa-user',
+export const useUserStore = defineStore('vepa-user', {
   state: (): UserState => ({
     token: '',
     userInfo: { name: 'Jason Chen' }
