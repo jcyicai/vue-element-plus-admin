@@ -45,7 +45,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     plugins: createVitePlugins(viteEnv), // 插件
     esbuild: {
-      pure: viteEnv.VITE_BUILD_DELETE_CONSOLE ? ['console.log', 'debugger'] : [] // 打包是否移除 console debugger
+      pure: viteEnv.VITE_BUILD_DELETE_CONSOLE ? ['console.log'] : [],
+      drop: viteEnv.VITE_BUILD_DELETE_CONSOLE ? ['debugger'] : [] // 打包是否移除 console debugger
     },
     build: {
       outDir: 'dist',
